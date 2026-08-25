@@ -1,12 +1,13 @@
 ## Tokenizer Comparison
 
-| Tokenizer | Avg Compression Ratio (Tokens/Word) | Avg OOV Rate | Avg Processing Speed (s/text) |
+| Tokenizer | Avg Compression Ratio (Tokens/Word) | Avg OOV Rate | Avg Processing Speed (tokens/s) |
 |---|---|---|---|
-| BPE | 1.7769 | 0.0000% | 0.000123 |
-| WordPiece | 2.0702 | 0.0193% | 0.000294 |
-| SentencePiece | 2.1738 | 0.0000% | 0.000354 |
-| Unigram | 2.1246 | 0.0000% | 0.000361 |
-| Twokenize | 1.2444 | 0.0000% | 0.000408 |
+| BPE | 1.8041 | 0.0000% | 1,002,011.88 |
+| WordPiece | 2.1221 | 0.0316% | 511,872.45 |
+| SentencePiece | 2.2229 | 0.0000% | 451,504.40 |
+| Unigram | 2.1751 | 0.0000% | 412,463.83 |
+| Twokenize | 1.2388 | 0.0000% | 244,716.53 |
 
 ### Data Cleaning Metrics
-* **Average Text Compression Ratio (Cleaned / Original length):** 66.02%
+* **Average Text Compression Ratio (Cleaned / Original length):** 66.38%
+

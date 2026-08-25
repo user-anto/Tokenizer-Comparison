@@ -26,8 +26,10 @@ def tokenize_and_measure(name, tokenizer_func, texts, is_twokenize=False):
         tokens = tokenizer_func(text)
         end_time = time.perf_counter()
         
-        processing_speed = end_time - start_time
+        time_taken = end_time - start_time
         num_tokens = len(tokens)
+        processing_speed = num_tokens / time_taken if time_taken > 0 else 0
+        
         compression_ratio = num_tokens / num_words if num_words > 0 else 0
         
         oov_count = 0

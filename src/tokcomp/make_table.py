@@ -23,7 +23,7 @@ def main():
     table_lines = [
         "## Tokenizer Comparison",
         "",
-        "| Tokenizer | Avg Compression Ratio (Tokens/Word) | Avg OOV Rate | Avg Processing Speed (s/text) |",
+        "| Tokenizer | Avg Compression Ratio (Tokens/Word) | Avg OOV Rate | Avg Processing Speed (tokens/s) |",
         "|---|---|---|---|"
     ]
     
@@ -37,7 +37,7 @@ def main():
             avg_comp, avg_oov, avg_speed = calculate_averages(data)
             
             # Format the values: OOV as percentage, others as float
-            row = f"| {name} | {avg_comp:.4f} | {avg_oov:.4%} | {avg_speed:.6f} |"
+            row = f"| {name} | {avg_comp:.4f} | {avg_oov:.4%} | {avg_speed:,.2f} |"
             table_lines.append(row)
         else:
             table_lines.append(f"| {name} | N/A | N/A | N/A |")
@@ -63,7 +63,7 @@ def main():
             clean_info = f"### Data Cleaning Metrics\n* **Average Text Compression Ratio (Cleaned / Original length):** {avg_clean_ratio:.2%}\n\n"
             table_content += clean_info
             
-    with open(readme_path, 'a', encoding='utf-8') as f:
+    with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(table_content)
         
     print(f"Table appended to {readme_path}")
